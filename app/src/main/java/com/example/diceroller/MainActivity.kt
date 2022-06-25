@@ -46,36 +46,17 @@ class MainActivity : AppCompatActivity() {
             tvInstruct.text = ""
 
             diceRolling()
-            diceRolling2()
 
         }
     }
     private fun diceRolling(){
         val dice = Dice(6)
         val diceRoll = dice.roll()
+        val tvtextView2: TextView = findViewById(R.id.textView2)
+        tvtextView2.text = diceRoll.toString()
 
         // Update the screen with the dice roll
         val resultImageView: ImageView = findViewById(R.id.imageView)
-        val drawableResource = when (diceRoll) {
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            6 -> R.drawable.dice_6
-            else -> R.drawable.ic_launcher_foreground
-
-        }
-
-        resultImageView.setImageResource(drawableResource)
-        resultImageView.contentDescription = diceRoll.toString()
-    }
-    private fun diceRolling2(){
-        val dice = Dice(6)
-        val diceRoll = dice.roll()
-
-        // Update the screen with the dice roll
-        val resultImageView: ImageView = findViewById(R.id.imageView2)
         val drawableResource = when (diceRoll) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
